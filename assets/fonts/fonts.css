@@ -1,0 +1,91 @@
+/* 海报项目字体包 · @font-face 定义
+ * 字体来源：
+ * 1. 字语趣味像素（非商用）—— 主标题「边界之外」等中文标题用
+ * 2. Aa小狗乖乖像素体 —— 日期/数字像素字用
+ * 3. 正文信息区仍推荐：阿里巴巴普惠体 → 降级微软雅黑（系统字体，无需打包）
+ * 注意：两个字体质ファイル均为非商用授权，商用发布前需确认授权范围。
+ */
+
+@font-face {
+  font-family: "ZiYu Pixel";
+  src: url("ZiYuQuWeiXiangSu.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AaGouGou Pixel";
+  src: url("AaXiaoGouGuaiGuaiXiangSuTi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- 海报排印变量（v2.0 规范） ---------- */
+:root {
+  /* 色板 v3.0 */
+  --bg: #FFFFFF;
+  --ink: #404040;        /* 全部文字（禁纯黑） */
+  --pink: #FFA5E8;
+  --purple: #C9B0FF;
+  --green: #70E900;
+  --orange: #FFBF34;
+  --blue: #36B6FF;
+  --gray-1: #F2F2F2;
+  --gray-2: #E0E0E0;
+  --gray-3: #CCCCCC;
+  --gray-4: #999999;
+  --gray-5: #666666;
+
+  /* 字体族 */
+  --font-title: "ZiYu Pixel", "Microsoft YaHei", sans-serif;   /* 中文主标题 */
+  --font-num: "AaGouGou Pixel", "ZiYu Pixel", monospace;       /* 大日期/数字 */
+  --font-body: "Alibaba PuHuiTi", "Microsoft YaHei", sans-serif; /* 信息区 */
+  --font-sub: "DIN Alternate", "Microsoft YaHei", sans-serif;  /* 副标题/英文 等线粗体 */
+}
+
+/* ---------- 标题区（1024×1536 基准） ---------- */
+.poster-title {
+  font-family: var(--font-title);
+  font-size: 130px;
+  line-height: 1.1;
+  color: var(--pink);            /* 取本张主色 */
+  text-align: left;
+  margin-left: 60px;
+}
+.poster-subtitle {
+  font-family: var(--font-sub);
+  font-weight: 700;
+  font-size: 60px;
+  color: var(--ink);
+  margin: 24px 0 0 60px;
+}
+.poster-en {
+  font-family: var(--font-sub);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin: 16px 0 0 60px;
+}
+.poster-date {
+  font-family: var(--font-num);
+  font-size: 64px;
+  color: var(--ink);
+}
+.poster-year {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 24px;
+  color: var(--gray-4);
+}
+
+/* ---------- 信息区五级层级 ---------- */
+.info-area { height: 400px; border-top: 1.5px solid var(--gray-2); padding-top: 40px; }
+.info-area .row { margin-bottom: 20px; line-height: 1.5; }
+.l1-label { font-family: var(--font-body); font-weight: 700; font-size: 24px; color: var(--ink); }
+.l2-key   { font-family: var(--font-body); font-weight: 700; font-size: 36px; color: var(--ink); }
+.l3-body  { font-family: var(--font-body); font-weight: 400; font-size: 28px; color: #333333; }
+.l4-aux   { font-family: var(--font-body); font-weight: 300; font-size: 22px; color: var(--gray-4); }
+.l5-intro { font-family: var(--font-body); font-weight: 400; font-size: 22px; color: var(--gray-5); line-height: 35px; }
